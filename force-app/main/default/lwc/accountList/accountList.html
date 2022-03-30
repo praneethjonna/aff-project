@@ -1,0 +1,50 @@
+<template>
+    <lightning-card>
+
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+
+        <template if:true={error}>
+            <lightning-card>
+                <div class="slds-text-color_error slds-var-p-left_medium">
+                    {error}
+                </div>
+            </lightning-card>
+        </template>
+
+        <template if:false={selectedAccount}>
+            <template if:true={accounts}>
+                <div class="slds-nav-vertical__section">
+                    <h2 id="entity-header" class="slds-nav-vertical__title">Accounts</h2>
+                    <ul aria-describedby="entity-header">
+                        <template for:each={accounts} for:item="account">
+                            <li class="slds-nav-vertical__item" id={account.Id} key={account.Id} data-id={account.Id} onclick={onItemSelected}>
+                                <a href="#" class="slds-nav-vertical__action">{account.Name}</a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={selectedAccount}>
+            <c-selected-account account={selectedAccount}></c-selected-account>
+        </template>
+
+        <div class="slds-card__footer">
+            <div class="slds-clearfix">
+                <template if:false={selectedAccount}>
+                    <lightning-button class="slds-col slds-text-align_left slds-float_left" label="Next"
+                        variant="neutral" onclick={handleNextClick} ></lightning-button>
+                </template>
+                <template if:true={selectedAccount}>
+                    <lightning-button class="slds-col slds-text-align_left slds-float_left" label="Back"
+                        variant="neutral" onclick={handleBackClick} ></lightning-button>
+                </template>
+            </div>
+                       
+        </div>
+
+    </lightning-card>  
+</template>

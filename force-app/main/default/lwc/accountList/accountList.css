@@ -1,0 +1,13 @@
+.account-selected {
+
+    color: rgb(15, 1, 1);
+    background-color: lightcoral;
+    box-shadow: inset 0.25rem 0 0 rgb(138, 37, 37);
+
+}
+
+.account-selected > .slds-nav-vertical__action{
+
+    box-shadow: inset var(--lwc-spacingXxSmall, 0.25rem) var(--lwc-spacingNone, 0) var(--lwc-spacingNone, 0) rgb(138, 37, 37);
+
+}

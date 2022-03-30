@@ -1,0 +1,16 @@
+<template>
+	<lightning-card title={account.Name} >
+		<div class="slds-var-p-horizontal_small">
+			<div class="slds-media">
+				<div class="slds-media__figure">
+					<img src={account.Owner.SmallPhotoUrl} alt="Owner profile"/>
+				</div>
+				<div class="slds-media__body">
+                    <p class="slds-var-m-bottom_xx-small">Industry: {account.Industry}</p>
+                    <p class="slds-var-m-bottom_xx-small">Type: {account.Type}</p>
+                    <p class="slds-var-m-bottom_xx-small">Owner Name: {account.Owner.Name}</p>
+				</div>
+			</div>
+		</div>
+	</lightning-card>
+</template>
